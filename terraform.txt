@@ -2,7 +2,7 @@
 
 provider "aws" {
   region  = "us-east-1"
-  profile = "awsaml-079904783278-BAHSSO_Admin_Role"
+  profile = ""
 }
 
 #Create the Instances
