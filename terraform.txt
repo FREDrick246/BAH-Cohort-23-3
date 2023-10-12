@@ -1,0 +1,20 @@
+#Terraform
+
+provider "aws" {
+  region  = "us-east-1"
+  profile = "awsaml-079904783278-BAHSSO_Admin_Role"
+}
+
+#Create the Instances
+resource "aws_instance" "web_server" {
+  iam_instance_profile = "EC2-EKS-Default-Role"
+  ami                         = "ami-00bdc27249c226734"
+  instance_type               = "t2.medium"
+  vpc_security_group_ids      = ["sg-0644cff8deb2df12c"]
+    subnet_id                 = "subnet-01005b3af0799faf5"
+    key_name                  = "bach-ec2-test"
+
+  tags = {
+    Name = "CSN_ENV_HOH_23_3_Prometheus_Grafana_Server"
+  }
+}
